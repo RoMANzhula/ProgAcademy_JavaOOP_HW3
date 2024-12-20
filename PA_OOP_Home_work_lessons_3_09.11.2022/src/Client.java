@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Client {
     private double money;
-    int purchasedItemCounter = 0; // счетчик купленных товаров
-    ArrayList<String> shoppingCart = new ArrayList<>(); //корзина с товаром
+    int purchasedItemCounter = 0; 
+    ArrayList<String> shoppingCart = new ArrayList<>();
 
      static double totalSum = 0;
 
@@ -19,7 +19,7 @@ public class Client {
     public void setMoney(double money) {
         this.money = money;
     }
-    public void customerRequest() { // запрос для клиента
+    public void customerRequest() { 
         System.out.println("Welcome to our online store!" + "\n" + "Would you like to see a list of our products? Please enter Y/N:");
         Scanner scanner = new Scanner(System.in);
         String customerRequest = scanner.nextLine().toLowerCase();
@@ -32,7 +32,7 @@ public class Client {
         }
     }
 
-    public void fillingShoppingCart() {//заполняем корзину покупателя
+    public void fillingShoppingCart() {
         System.out.println("Please select the products you want to buy (enter products separated by a new line):");
         Scanner scanner = new Scanner(System.in);
         String clientList = "s";
@@ -48,7 +48,7 @@ public class Client {
         }
     }
 
-    public void returnTotalSumShoppingCart() { // вернуть общую сумму стоимости продуктов в корзине
+    public void returnTotalSumShoppingCart() { 
         for (String elementOfShoppingCart : shoppingCart) {
             if (elementOfShoppingCart.equals("bread")) {
                 totalSum += 25;
@@ -79,7 +79,7 @@ public class Client {
         System.out.println("Total amount due: " + totalSum);
     }
 
-    public void payForProducts(Client client) { // оплата за продукты(товары)
+    public void payForProducts(Client client) { 
         System.out.println("Are you ready to pay for the item you have chosen? Please enter Y/N:");
         Scanner scanner = new Scanner(System.in);
         String strToPay = scanner.nextLine().toLowerCase();
@@ -118,13 +118,3 @@ public class Client {
                 '}';
     }
 }
-
-////Домашнее задание:
-////Спроектировать систему классов для интернет-магазина.
-//// Покупатель может иметь n денежных средств, n купленных товаров, корзину с зарезервированными товарами.
-//// Товары бывают разных категорий(продовольствие, одежда, мебель, сувениры), каждый товар представлен в  магазине в фиксированном кол-ве.
-////Система должна позволять:
-////1. Обращаться человеку в магазин с запросом на получение ассортимента/покупку n-го количества товаров.
-////2. Позволять заведующему магазина добавлять/убирать товары со склада.
-////3. При оформлении заказа пользователем перенаправлять на систему оплаты - она показывает список заказанных товаров из корзины и при
-//// подтверждении пользователем совершает покупку(при условии достаточности средств на счету пользователя)
